@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portofolio - Wahyu Ryan Syaputra</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    :root { --nav-h: 72px; }
+    html { scroll-behavior: smooth; }
+    section { scroll-margin-top: calc(var(--nav-h) + 12px); }
+
+    /* Progress */
+    .progress-bar { width: 0; transition: width 1.6s ease-in-out; }
+
+    /* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 3rem;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 2.25rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #6366f1;
+  transform: scaleY(0);
+  transform-origin: top;
+  animation: growLine 1.5s ease forwards;
+}
+@keyframes growLine {
+  to {
+    transform: scaleY(1);
+  }
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInItem 0.8s ease forwards;
+}
+.timeline-item:nth-child(1) { animation-delay: 0.5s; }
+.timeline-item:nth-child(2) { animation-delay: 1s; }
+.timeline-item:nth-child(3) { animation-delay: 1.5s; }
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -2rem; 
+  top: 0.4rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 9999px;
+  background: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99,102,241,.15);
+  transform: scale(0);
+  animation: popCircle 0.4s ease forwards;
+}
+.timeline-item:nth-child(1)::before { animation-delay: 0.5s; }
+.timeline-item:nth-child(2)::before { animation-delay: 1s; }
+.timeline-item:nth-child(3)::before { animation-delay: 1.5s; }
+
+@keyframes popCircle {
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes fadeInItem {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+    /* Nav active underline */
+    .nav-link { position: relative; }
+    .nav-link.active { color:#2563eb; font-weight:600; }
+    .nav-link.active::after{
+      content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:#2563eb;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <header class="fixed top-0 inset-x-0 bg-white/90 backdrop-blur shadow z-50">
+    <nav class="container mx-auto flex justify-between items-center px-4 py-4" style="height: var(--nav-h);">
+      <h1 class="text-2xl font-bold text-blue-600">Portofolio</h1>
+      <ul class="hidden md:flex gap-6">
+        <li><a href="#tentang"    class="nav-link hover:text-blue-600 transition">Tentang</a></li>
+        <li><a href="#pendidikan" class="nav-link hover:text-blue-600 transition">Pendidikan</a></li>
+        <li><a href="#keahlian"   class="nav-link hover:text-blue-600 transition">Keahlian</a></li>
+        <li><a href="#proyek"     class="nav-link hover:text-blue-600 transition">Proyek</a></li>
+        <li><a href="#kontak"     class="nav-link hover:text-blue-600 transition">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="h-[85vh] md:h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-center">
+    <div data-aos="zoom-in" data-aos-duration="1100">
+      <h2 class="text-4xl md:text-5xl font-extrabold">Haloo!, <span class="text-yellow-300"> Saya Wahyu Ryan Syaputra</span></h2>
+      <p class="mt-4 text-lg opacity-90">Web Developer | Programmer | IT Enthusiast | Web Design</p>
+      <a href="#proyek" class="mt-6 inline-block bg-yellow-400 text-gray-900 font-semibold px-6 py-3 rounded-full shadow hover:bg-yellow-300 transition transform hover:scale-105">
+        Lihat Proyek
+      </a>
+    </div>
+  </section>
+
+  <!-- Tentang -->
+  <section id="tentang" class="container mx-auto py-20 px-6">
+    <h3 class="text-3xl font-bold text-center mb-6" data-aos="fade-up">Tentang Saya</h3>
+    <p class="max-w-3xl mx-auto text-center text-gray-600 leading-relaxed" data-aos="fade-up" data-aos-delay="150">
+      Saya adalah mahasiswa IT semester 6 dengan minat utama pada pengembangan aplikasi berbasis web dan perancangan antarmuka (UI/UX). Saat ini saya aktif mengembangkan berbagai proyek seperti sistem manajemen tugas, platform e-learning interaktif, aplikasi e-commerce dengan rekomendasi produk, serta solusi berbasis data. Saya juga memiliki ketertarikan besar untuk mendalami jalur Full Stack Developer, agar mampu menguasai pengembangan aplikasi dari sisi frontend hingga backend sekaligus menghadirkan pengalaman pengguna yang optimal.
+    </p>
+  </section>
+
+  <!-- Pendidikan -->
+  <section id="pendidikan" class="container mx-auto py-20 px-6">
+  <h3 class="text-3xl font-bold text-center mb-10">Riwayat Pendidikan</h3>
+  <div class="timeline max-w-2xl mx-auto">
+    <div class="timeline-item">
+      <h4 class="font-semibold text-lg">Universitas Kristen Satya Wacana</h4>
+      <p class="text-gray-600">S1 Teknik Informatika | 2022 - Sekarang</p>
+    </div>
+    <div class="timeline-item">
+      <h4 class="font-semibold text-lg">SMA Negeri 1 Kota Salatiga</h4>
+      <p class="text-gray-600">Jurusan IPA | 2019 - 2022</p>
+    </div>
+    <div class="timeline-item">
+      <h4 class="font-semibold text-lg">SMP Negeri 4 Kota Salatiga</h4>
+      <p class="text-gray-600">2016 - 2019</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Keahlian -->
+  <section id="keahlian" class="bg-gray-100 py-20 px-6">
+    <h3 class="text-3xl font-bold text-center mb-10" data-aos="fade-up">Keahlian</h3>
+    <div class="max-w-3xl mx-auto space-y-6">
+
+      <div class="skill-block" data-percent="80" data-aos="fade-right">
+        <div class="flex justify-between mb-1">
+          <span>HTML & CSS</span><span class="count">0%</span>
+        </div>
+        <div class="w-full bg-gray-300 rounded-full h-3">
+          <div class="progress-bar bg-blue-600 h-3 rounded-full"></div>
+        </div>
+      </div>
+
+      <div class="skill-block" data-percent="60" data-aos="fade-right" data-aos-delay="120">
+        <div class="flex justify-between mb-1">
+          <span>JavaScript</span><span class="count">0%</span>
+        </div>
+        <div class="w-full bg-gray-300 rounded-full h-3">
+          <div class="progress-bar bg-yellow-500 h-3 rounded-full"></div>
+        </div>
+      </div>
+
+      <div class="skill-block" data-percent="80" data-aos="fade-right" data-aos-delay="240">
+        <div class="flex justify-between mb-1">
+          <span>PHP & MySQL</span><span class="count">0%</span>
+        </div>
+        <div class="w-full bg-gray-300 rounded-full h-3">
+          <div class="progress-bar bg-green-600 h-3 rounded-full"></div>
+        </div>
+      </div>
+
+      <div class="skill-block" data-percent="50" data-aos="fade-right" data-aos-delay="360">
+        <div class="flex justify-between mb-1">
+          <span>Laravel</span><span class="count">0%</span>
+        </div>
+        <div class="w-full bg-gray-300 rounded-full h-3">
+          <div class="progress-bar bg-red-500 h-3 rounded-full"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Proyek -->
+<section id="proyek" class="container mx-auto py-20 px-6">
+  <h3 class="text-3xl font-bold text-center mb-10" data-aos="fade-up">Proyek</h3>
+  <div class="grid md:grid-cols-3 gap-8">
+    
+    <!-- Proyek 1 -->
+    <div class="bg-white rounded-xl shadow hover:shadow-xl transition transform hover:-translate-y-2 overflow-hidden" data-aos="fade-up">
+      <!-- Carousel -->
+      <div class="relative w-full overflow-hidden">
+        <div class="flex transition-transform duration-700 ease-in-out" id="carousel-proyek1">
+          <!-- Slide 1 -->
+          <div class="w-full flex-shrink-0">
+            <img src="asset/proyek1a.png" alt="Proyek 1 - Tampilan 1" class="w-full h-56 object-cover">
+          </div>
+          <!-- Slide 2 -->
+          <div class="w-full flex-shrink-0">
+            <img src="asset/proyek1b.png" alt="Proyek 1 - Tampilan 2" class="w-full h-56 object-cover">
+          </div>
+        </div>
+
+        <!-- Tombol Navigasi -->
+        <button onclick="prevSlide('carousel-proyek1')" class="absolute top-1/2 left-3 -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-200">◀</button>
+        <button onclick="nextSlide('carousel-proyek1')" class="absolute top-1/2 right-3 -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-200">▶</button>
+      </div>
+
+      <!-- Deskripsi Proyek -->
+      <div class="p-4">
+        <h4 class="text-xl font-semibold">
+            Sistem Manajemen Tugas Sekolah (On Development)
+          </a>
+        </h4>
+        <p class="text-gray-600 mt-2">
+          Aplikasi web untuk tracking tugas laporan dan lainnya pada sebuah sistem tata belajar online di sebuah sekolah.
+        </p>
+      </div>
+    </div>
+
+    <!-- Proyek 2 -->
+    <div class="bg-white rounded-xl shadow hover:shadow-xl transition transform hover:-translate-y-2 overflow-hidden" data-aos="fade-up" data-aos-delay="120">
+      <img src="asset/proyek2.png" alt="Proyek 2" class="w-full h-56 object-cover hover:scale-105 transition duration-500">
+      <div class="p-4">
+        <h4 class="text-xl font-semibold">
+          <a href="https://www.figma.com/proto/uXLIE2obB40RhKOtlKHYDR/TTS-ASDOS-IMK---D-%7C%7C-Gudang---Toko-Kelontong?node-id=1-2&starting-point-node-id=1%3A2&t=sHf46EnzyLs3y5lw-1" target="_blank" class="hover:text-blue-600 transition">
+            Design Aplikasi E-Commerce Warung Kelontong
+          </a>
+        </h4>
+        <p class="text-gray-600 mt-2">Platform penjualan online warung kelontong dengan fitur interaktif.</p>
+      </div>
+    </div>
+
+    <!-- Proyek 3 -->
+<div class="bg-white rounded-xl shadow hover:shadow-xl transition transform hover:-translate-y-2 overflow-hidden" data-aos="fade-up" data-aos-delay="240">
+  
+  <!-- Carousel -->
+  <div class="relative w-full overflow-hidden">
+    <div class="flex transition-transform duration-700 ease-in-out" id="carousel-proyek3">
+      <!-- Slide 1 -->
+      <div class="w-full flex-shrink-0">
+        <img src="asset/proyek3a.png" alt="Proyek 3 - Tampilan 1" class="w-full h-56 object-cover cursor-pointer" onclick="openLightbox('asset/proyek3a.png')">
+      </div>
+      <!-- Slide 2 -->
+      <div class="w-full flex-shrink-0">
+        <img src="asset/proyek3b.png" alt="Proyek 3 - Tampilan 2" class="w-full h-56 object-cover cursor-pointer" onclick="openLightbox('asset/proyek3b.png')">
+      </div>
+    </div>
+
+    <!-- Tombol Navigasi -->
+    <button onclick="prevSlide('carousel-proyek3')" class="absolute top-1/2 left-3 -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-200">
+      ◀
+    </button>
+    <button onclick="nextSlide('carousel-proyek3')" class="absolute top-1/2 right-3 -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-200">
+      ▶
+    </button>
+  </div>
+
+  <!-- Deskripsi Proyek -->
+  <div class="p-4">
+    <h4 class="text-xl font-semibold">
+      <a href="https://www.figma.com/proto/xZU7PjqwYRO9RCRmgOsy4u/FIGMA-ERPEEL?node-id=1-2&p=f&t=lsPd2CKn29Zgyire-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=3%3A49" target="_blank" class="hover:text-blue-600 transition">
+        Design E-Commerce Showroom Mobil Bekas
+      </a>
+    </h4>
+    <p class="text-gray-600 mt-2">
+      Website toko online dengan rekomendasi produk otomatis dan tampilan minimalis ditujukan bagi kalangan berumur.
+    </p>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+<script>
+  // Carousel Logic
+  function initCarousel(id) {
+    const track = document.getElementById(id);
+    let currentIndex = 0;
+    const slides = track.children;
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+      if (index < 0) index = totalSlides - 1;
+      if (index >= totalSlides) index = 0;
+      currentIndex = index;
+      track.style.transform = `translateX(-${100 * index}%)`;
+    }
+
+    return {
+      next: () => showSlide(currentIndex + 1),
+      prev: () => showSlide(currentIndex - 1),
+    };
+  }
+
+  const carouselInstances = {};
+  function nextSlide(id) {
+    if (!carouselInstances[id]) {
+      carouselInstances[id] = initCarousel(id);
+    }
+    carouselInstances[id].next();
+  }
+  function prevSlide(id) {
+    if (!carouselInstances[id]) {
+      carouselInstances[id] = initCarousel(id);
+    }
+    carouselInstances[id].prev();
+  }
+</script>
+
+
+
+  <!-- Kontak -->
+  <section id="kontak" class="bg-indigo-600 py-20 text-white text-center">
+    <h3 class="text-3xl font-bold mb-6" data-aos="zoom-in">Kontak</h3>
+    <p class="mb-4" data-aos="fade-up">Email: <a href="wahyu.ryan285@gmail.com" class="underline">wahyu.ryan285@gmail.com</a></p>
+    <p data-aos="fade-up" data-aos-delay="120">LinkedIn: <a href="https://www.linkedin.com/in/wahyu-ryan285" class="underline">linkedin.com/in/wahyu-ryan285</a></p>
+  </section>
+
+  <footer class="bg-gray-900 text-gray-400 py-6 text-center">
+    <p>&copy; 2025 Nama Kamu. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Init AOS
+    AOS.init({ once: true });
+
+    // Smooth "active" nav on scroll
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = [...document.querySelectorAll(".nav-link")];
+
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = entry.target.getAttribute("id");
+        const link = navLinks.find(a => a.getAttribute("href") === `#${id}`);
+        if (!link) return;
+        if (entry.isIntersecting) {
+          navLinks.forEach(a => a.classList.remove("active"));
+          link.classList.add("active");
+        }
+      });
+    }, { rootMargin: `-40% 0px -50% 0px`, threshold: 0.01 });
+
+    sections.forEach(s => navObserver.observe(s));
+
+    // Progress bars + count up (robust)
+    const skillBlocks = document.querySelectorAll(".skill-block");
+
+    const runCountUp = (el, end, duration = 1500) => {
+      let start = 0, startTime = null;
+      const step = (ts) => {
+        if (!startTime) startTime = ts;
+        const p = Math.min((ts - startTime) / duration, 1);
+        const val = Math.floor(p * end);
+        el.textContent = val + "%";
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+
+    const skillObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const block = entry.target;
+        const percent = parseInt(block.dataset.percent || "0", 10);
+        const bar = block.querySelector(".progress-bar");
+        const count = block.querySelector(".count");
+        if (bar) bar.style.width = percent + "%";
+        if (count) runCountUp(count, percent, 1600);
+        obs.unobserve(block); // jalan sekali
+      });
+    }, { threshold: 0.55 });
+
+    skillBlocks.forEach(b => skillObserver.observe(b));
+  </script>
+</body>
+</html>
